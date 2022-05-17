@@ -74,7 +74,7 @@
 <script>
     function add_cart(id, name, price, discount) {
         $.ajax({
-            url: "/jual",
+            url: "<?= base_url('jual') ?>",
             method: "POST",
             data: {
                 id: id,
@@ -94,7 +94,7 @@
         var qty = $('#qty').val();
 
         $.ajax({
-            url: "/jual/update",
+            url: "<?= base_url('jual/update') ?>",
             method: "POST",
             data: {
                 rowid: rowid,

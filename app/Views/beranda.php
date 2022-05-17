@@ -213,7 +213,7 @@
     function chartCustomer() {
         var tahun = $('#tahun-cust').val();
         $.ajax({
-            url: "/chart-customer",
+            url: "<?= base_url('chart-customer') ?>",
             method: "POST",
             data: {
                 'tahun': tahun,

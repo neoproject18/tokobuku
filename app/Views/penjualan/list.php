@@ -87,8 +87,8 @@
 <?= $this->include('penjualan/modal-customer') ?>
 <script>
     function load() {
-        $('#detail_cart').load('/jual/load');
-        $('#spanTotal').load('/jual/gettotal');
+        $('#detail_cart').load("<?= base_url('jual/load') ?>");
+        $('#spanTotal').load("<?= base_url('jual/gettotal') ?>");
     }
 
     $(document).ready(function() {
@@ -130,7 +130,7 @@
             success: function(response) {
                 var result = JSON.parse(response);
                 swal({
-                    title: result.msg,
+                    title: result.msg, 
                     icon: result.status ? "success" : "error",
                 });
                 load();

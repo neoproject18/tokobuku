@@ -16,7 +16,7 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="<?= base_url('jual') ?>">Transaksi</a>
-                        <a class="nav-link" href="<?= base_url('jual/laporan') ?>">Laporan</a>
+                        <a class="nav-link" href="">Laporan</a>
                     </nav>
                 </div>
                 <div class="sb-sidenav-menu-heading">MASTER</div>

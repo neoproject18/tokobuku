@@ -25,7 +25,7 @@ class Penjualan extends BaseController
     public function index()
     {
         // dd($this->cart->total());
-        // $this->cart->destroy();
+        $this->cart->destroy();
         $dataBook = $this->book->getBook();
         $dataCust = $this->cust->findAll();
         $data = [
@@ -43,7 +43,9 @@ class Penjualan extends BaseController
             'qty'     => $this->request->getVar('qty'),
             'price'   => $this->request->getVar('price'),
             'name'    => $this->request->getVar('name'),
-            'options' => array('discount' => $this->request->getVar('discount'))
+            'options' => array(
+                'discount' => $this->request->getVar('discount')
+            )
         ));
         echo $this->showCart();
     }
