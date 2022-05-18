@@ -108,7 +108,7 @@
     $(document).on('click', '.hapus_cart', function() {
         var row_id = $(this).attr("id");
         $.ajax({
-            url: "jual/" + row_id,
+            url: "<?= base_url('jual/') ?>" + row_id,
             method: "DELETE",
             success: function(data) {
                 load();
@@ -121,7 +121,7 @@
         var nominal = $('#nominal').val();
         var idcust = $('#id-cust').val();
         $.ajax({
-            url: "/jual/bayar",
+            url: "<?= base_url('jual/bayar') ?>",
             method: "POST",
             data: {
                 'nominal': nominal,
@@ -130,7 +130,7 @@
             success: function(response) {
                 var result = JSON.parse(response);
                 swal({
-                    title: result.msg, 
+                    title: result.msg,
                     icon: result.status ? "success" : "error",
                 });
                 load();

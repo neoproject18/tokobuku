@@ -139,7 +139,8 @@ class Penjualan extends BaseController
                 ];
                 echo json_encode($response);
             } else {
-                // Jika nominal memenuhi, akan menyimpan data di tabel sale dan sale_detail
+                // Jika nominal memenuhi, akan menyimpan data
+                // di tabel sale dan sale_detail
                 $this->sale->save([
                     'sale_id' => $id,
                     'user_id' => user()->id,
@@ -147,6 +148,7 @@ class Penjualan extends BaseController
                 ]);
 
                 foreach ($this->cart->contents() as $items) {
+                    $diskon = ($items['options']['discount'] / 100) * $items['subtotal'];
                     $this->saleDetail->save([
                         'sale_id' => $id,
                         'book_id' => $items['id'],
