@@ -14,8 +14,8 @@
             </div>
             <div class="card-body">
                 <!-- Isi Report -->
-                <a target="_blank" class="btn btn-primary mb-3" type="button" href="/jual/exportpdf">Export PDF</a>
-                <a class="btn btn-dark mb-3" type="button" href="/jual/exportexcel">Export Excel</a>
+                <a target="_blank" class="btn btn-primary mb-3" type="button" href="<?= base_url('jual/exportpdf') ?>">Export PDF</a>
+                <a class="btn btn-dark mb-3" type="button" href="<?= base_url('jual/exportexcel') ?>">Export Excel</a>
                 <table id="datatablesSimple">
                     <thead>
                         <tr>

@@ -220,7 +220,8 @@ class Penjualan extends BaseController
         $report = $this->sale->getReport();
 
         $spreadsheet = new Spreadsheet();
-        // tulis header/nama kolom
+        // Menuliskan Header atau Judul Tabel
+        // di cell A1 sampai F1
         $spreadsheet->setActiveSheetIndex(0)
             ->setCellValue('A1', 'No')
             ->setCellValue('B1', 'Nota')
@@ -229,21 +230,23 @@ class Penjualan extends BaseController
             ->setCellValue('E1', 'Customer')
             ->setCellValue('F1', 'Total');
 
-        // tulis data mobil ke cell
+        // Menuliskan isi dari Data Laporan
+        // ke dalam Excel dimulai baris kedua
         $rows = 2;
-        $no = 1;
-        foreach ($report as $value) {
+        foreach ($report as $key => $value) {
             $spreadsheet->setActiveSheetIndex(0)
-                ->setCellValue('A' . $rows, $no++)
+                ->setCellValue('A' . $rows, $key + 1)
                 ->setCellValue('B' . $rows, $value['sale_id'])
                 ->setCellValue('C' . $rows, $value['tgl_transaksi'])
-                ->setCellValue('D' . $rows, $value['firstname'] . ' ' . $value['lastname'])
+                ->setCellValue('D' . $rows, $value['firstname'] . ' ' .
+                    $value['lastname'])
                 ->setCellValue('E' . $rows, $value['name_cust'])
                 ->setCellValue('F' . $rows, $value['total']);
             $rows++;
         }
 
-        // tulis dalam format .xlsx
+        // Mengenerate data ke format .xlsx
+        // Membuat nama file
         $writer = new Xlsx($spreadsheet);
         $fileName = 'Laporan-Penjualan';
 

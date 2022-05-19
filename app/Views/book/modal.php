@@ -3,12 +3,14 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalToggleLabel">IMPORT BUKU</h5>
+                <h5 class="modal-title" id="exampleModalToggleLabel">
+                    IMPORT BUKU
+                </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <!-- Form Import -->
-                <form action="/book/import" method="POST" enctype="multipart/form-data">
+                <form action="<?= base_url('book/import') ?>" method="POST" enctype="multipart/form-data">
                     <?= csrf_field() ?>
                     <div class="mb-3 row">
                         <label for="file" class="col-sm-3 col-form-label">File Excel</label>
