@@ -254,7 +254,8 @@
     }
 
     function downloadChartImg(download, chart) {
-        var img = chart.toDataURL("image/jpg", 1.0).replace("image/jpg", "image/octet-stream")
+        var img = chart.toDataURL("image/jpg", 1.0).replace("image/jpg",
+            "image/octet-stream")
         download.setAttribute("href", img)
     }
 
@@ -274,7 +275,8 @@
                     doc.addImage(img, 'PNG', 0, 0, imgWidth, imgHeight)
                 } else {
                     while (leftHeight > 0) {
-                        doc.addImage(img, 'PNG', 0, position, imgWidth, imgHeight)
+                        doc.addImage(img, 'PNG', 0, position, imgWidth,
+                            imgHeight)
                         leftHeight -= tinggiPage
                         position -= 841.89
                         if (leftHeight > 0) {
