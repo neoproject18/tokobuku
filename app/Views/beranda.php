@@ -1,8 +1,7 @@
 <?= $this->extend('layout/template') ?>
 
 <?= $this->section('content') ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <main>
     <div class="container-fluid px-4">
@@ -62,7 +61,7 @@
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn btn-outline-primary btn-sm" onclick="downloadChartTransaksi('PDF')">Unduh PDF</button>
                         <a id="download-trans" download="chart-transaksi.png">
-                            <button class="btn btn-outline-secondary btn-sm" onclick="downloadChartTransaksi('PNG')">Unduh PNG</button>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="downloadChartTransaksi('img')">Unduh Image</button>
                         </a>
                     </div>
                 </div>
@@ -79,7 +78,7 @@
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button class="btn btn-outline-primary btn-sm" onclick="downloadChartCustomer('PDF')">Unduh PDF</button>
                     <a id="download-cust" download="chart-customer.png">
-                        <button class="btn btn-outline-secondary btn-sm" onclick="downloadChartCustomer('PNG')">Unduh PNG</button>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="downloadChartCustomer('img')">Unduh Image</button>
                     </a>
                 </div>
             </div>
@@ -235,58 +234,38 @@
         var download = document.getElementById('download-trans')
         var chart = document.getElementById('chartTransaksi')
 
-        if (type == "PNG") {
+        if (type === "img") {
             downloadChartImg(download, chart)
         } else {
-            downloadChartPDF(chart, "Chart-Transaksi.pdf")
+            downloadChartPDF(chart, "Chart-Transaksi.pdf", 'Grafik Transaksi Penjualan')
         }
     }
 
     function downloadChartCustomer(type) {
-        var download = document.getElementById('download-cust')
+        var button = document.getElementById('download-cust')
         var chart = document.getElementById('chartCust')
 
-        if (type == "PNG") {
-            downloadChartImg(download, chart)
+        if (type === "img") {
+            downloadChartImg(button, chart)
         } else {
-            downloadChartPDF(chart, "Chart-Customer.pdf")
+            downloadChartPDF(chart, "Chart-Customer.pdf", 'Grafik Jumlah Customer')
         }
     }
 
-    function downloadChartImg(download, chart) {
+    function downloadChartImg(button, chart) {
         var img = chart.toDataURL("image/jpg", 1.0).replace("image/jpg",
             "image/octet-stream")
-        download.setAttribute("href", img)
+        button.setAttribute("href", img)
     }
 
-    function downloadChartPDF(chart, name) {
-        html2canvas(chart, {
-            onrendered: function(canvas) {
-                var img = canvas.toDataURL("image/jpg", 1.0)
-                var doc = new jsPDF('p', 'pt', 'A4')
-                var lebarKonten = canvas.width
-                var tinggiKonten = canvas.height
-                var tinggiPage = lebarKonten / 592.28 * 841.89
-                var leftHeight = tinggiKonten
-                var position = 0
-                var imgWidth = 595.28
-                var imgHeight = 592.28 / lebarKonten * tinggiKonten
-                if (leftHeight < tinggiPage) {
-                    doc.addImage(img, 'PNG', 0, 0, imgWidth, imgHeight)
-                } else {
-                    while (leftHeight > 0) {
-                        doc.addImage(img, 'PNG', 0, position, imgWidth,
-                            imgHeight)
-                        leftHeight -= tinggiPage
-                        position -= 841.89
-                        if (leftHeight > 0) {
-                            pdf.addPage()
-                        }
-                    }
-                }
-                doc.save(name)
-            }
-        });
+    function downloadChartPDF(chart, filename, title) {
+        var img = chart.toDataURL("image/jpg", 1.0).replace("image/jpg",
+            "image/octet-stream")
+        window.jsPDF = window.jspdf.jsPDF
+        doc = new jsPDF('p', 'mm', 'A4')
+        doc.text(10, 10, title)
+        doc.addImage(img, 'jpg', 10, 15, 0, 0)
+        doc.save(filename)
     }
 </script>
 <?= $this->endSection() ?>
