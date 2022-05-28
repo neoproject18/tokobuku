@@ -231,13 +231,14 @@
 
     // Download Chart
     function downloadChartTransaksi(type) {
-        var download = document.getElementById('download-trans')
+        var button = document.getElementById('download-trans')
         var chart = document.getElementById('chartTransaksi')
 
         if (type === "img") {
-            downloadChartImg(download, chart)
+            downloadChartImg(button, chart)
         } else {
-            downloadChartPDF(chart, "Chart-Transaksi.pdf", 'Grafik Transaksi Penjualan')
+            downloadChartPDF(chart, "Chart-Transaksi.pdf",
+                'Grafik Transaksi Penjualan')
         }
     }
 
@@ -248,7 +249,8 @@
         if (type === "img") {
             downloadChartImg(button, chart)
         } else {
-            downloadChartPDF(chart, "Chart-Customer.pdf", 'Grafik Jumlah Customer')
+            downloadChartPDF(chart, "Chart-Customer.pdf",
+                'Grafik Jumlah Customer')
         }
     }
 
