@@ -1,5 +1,5 @@
 /*
-SQLyog Professional v12.5.1 (32 bit)
+SQLyog Professional v12.5.1 (64 bit)
 MySQL - 10.1.34-MariaDB : Database - tokobuku
 *********************************************************************
 */
@@ -113,7 +113,7 @@ CREATE TABLE `auth_logins` (
   PRIMARY KEY (`id`),
   KEY `email` (`email`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 /*Data for the table `auth_logins` */
 
@@ -163,7 +163,14 @@ insert  into `auth_logins`(`id`,`ip_address`,`email`,`user_id`,`date`,`success`)
 (43,'::1','dharma.bekti16696@gmail.com',1,'2022-05-12 21:32:58',1),
 (44,'::1','dharma123',9,'2022-05-13 01:54:50',0),
 (45,'::1','dharmabekti@gmail.com',9,'2022-05-13 01:55:49',1),
-(46,'::1','dharma.bekti16696@gmail.com',1,'2022-05-13 03:23:10',1);
+(46,'::1','dharma.bekti16696@gmail.com',1,'2022-05-13 03:23:10',1),
+(47,'::1','dharma.bekti16696@gmail.com',1,'2022-05-16 23:52:37',1),
+(48,'::1','dharma.bekti16696@gmail.com',1,'2022-05-18 03:02:16',1),
+(49,'::1','dharma.bekti16696@gmail.com',1,'2022-05-18 23:36:18',1),
+(50,'::1','dharma.bekti16696@gmail.com',1,'2022-05-19 02:56:17',1),
+(51,'::1','dharma.bekti16696@gmail.com',1,'2022-05-19 20:39:22',1),
+(52,'::1','dharma.bekti16696@gmail.com',1,'2022-05-26 21:32:10',1),
+(53,'::1','dharma.bekti16696@gmail.com',1,'2022-05-28 01:10:29',1);
 
 /*Table structure for table `auth_permissions` */
 
@@ -254,16 +261,16 @@ CREATE TABLE `book` (
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime NOT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 /*Data for the table `book` */
 
 insert  into `book`(`book_id`,`title`,`slug`,`release_year`,`author`,`price`,`discount`,`stock`,`cover`,`book_category_id`,`created_at`,`updated_at`,`deleted_at`) values 
-(1,'Mencari Cahaya','mencari-cahaya',2014,'Ki Anom',55000,0.99,45,'1642905669_62bc358b26beb9f760b9.png',2,'2022-01-20 10:29:16','2022-02-03 11:41:46','0000-00-00 00:00:00'),
-(2,'Mahabharata','mahabharata',2016,'Ramajuana',85000,0.99,49,'1642998412_baebf6418de657607c9b.jpg',2,'2022-01-20 10:29:43','2022-02-03 11:41:47','0000-00-00 00:00:00'),
+(1,'Mencari Cahaya','mencari-cahaya',2014,'Ki Anom',55000,0.99,43,'1642905669_62bc358b26beb9f760b9.png',2,'2022-01-20 10:29:16','2022-05-18 03:45:22','0000-00-00 00:00:00'),
+(2,'Mahabharata','mahabharata',2016,'Ramajuana',85000,0.99,47,'1642998412_baebf6418de657607c9b.jpg',2,'2022-01-20 10:29:43','2022-05-18 03:45:22','0000-00-00 00:00:00'),
 (3,'Mencari Cahaya 2','mencari-cahaya-2',2015,'',60000,0.00,100,'default.jpg',2,'2022-01-20 22:56:02','2022-01-23 21:52:21','2022-01-23 21:52:21'),
 (4,'Cahaya Bulan','cahaya-bulan',2016,'',89000,0.00,50,'default.jpg',2,'2022-01-21 00:14:10','2022-01-21 03:30:46','2022-01-21 03:30:46'),
-(5,'Hujan Tanpa Pelangi','hujan-tanpa-pelangi',2015,'Ki Anom',55000,0.00,98,'1642865725_2628da0ab411f42d8e4a.jpg',2,'2022-01-22 09:35:25','2022-02-07 00:44:34','0000-00-00 00:00:00'),
+(5,'Hujan Tanpa Pelangi','hujan-tanpa-pelangi',2015,'Ki Anom',55000,0.00,97,'1642865725_2628da0ab411f42d8e4a.jpg',2,'2022-01-22 09:35:25','2022-05-18 03:45:22','0000-00-00 00:00:00'),
 (6,'36 Jam Jago Coding','36-jam-jago-coding',2021,'Prodi SI',70000,0.00,5,'default.jpg',1,'2022-01-23 21:55:30','2022-01-23 21:55:30','0000-00-00 00:00:00'),
 (7,'Ayah','ayah',2013,'Andrea Hirata',55000,30.00,100,'default.jpg',2,'2022-02-08 03:32:10','2022-02-08 03:32:10','0000-00-00 00:00:00'),
 (8,'Laskar Pelangi','laskar-pelangi',2007,'Andrea Hirata',55000,0.00,100,'default.jpg',2,'2022-02-08 03:32:10','2022-02-08 03:32:10','0000-00-00 00:00:00'),
@@ -273,7 +280,14 @@ insert  into `book`(`book_id`,`title`,`slug`,`release_year`,`author`,`price`,`di
 (12,'1','1',1,'1',1,1.00,1,'',1,'2022-02-14 22:41:05','2022-02-15 04:09:45','2022-02-15 04:09:45'),
 (13,'23','23',1,'1',1,0.00,1,'',1,'2022-02-15 03:11:09','2022-02-15 03:30:28','2022-02-15 03:30:28'),
 (14,'22','22',22,'22',22,0.00,0,'1644919759_c4bd7d2af038e1ec2ab4.jpg',1,'2022-02-15 03:55:25','2022-02-15 04:09:23','2022-02-15 04:09:23'),
-(15,'Rain Story','rain-story',2021,'Dharma Bekti',95000,10.00,100,'1652256290_1f7046848e5497846767.jpeg',2,'2022-05-11 02:36:51','2022-05-12 22:01:23','0000-00-00 00:00:00');
+(15,'Rain Story','rain-story',2021,'Dharma Bekti',95000,10.00,100,'1652256290_1f7046848e5497846767.jpeg',2,'2022-05-11 02:36:51','2022-05-12 22:01:23','0000-00-00 00:00:00'),
+(16,'Naruto 1','naruto-1',2000,'Kisimoto',50000,2.00,100,'default.jpg',2,'2022-05-19 20:42:16','2022-05-19 20:42:16','0000-00-00 00:00:00'),
+(17,'Naruto 2','naruto-2',2000,'Kisimoto',50000,2.00,100,'default.jpg',2,'2022-05-19 20:42:16','2022-05-19 20:42:16','0000-00-00 00:00:00'),
+(18,'Naruto 3','naruto-3',2000,'Kisimoto',50000,2.00,100,'default.jpg',2,'2022-05-19 20:42:16','2022-05-19 20:42:16','0000-00-00 00:00:00'),
+(19,'Pemulihan Jiwa','pemulihan-jiwa',2013,'Dedy Susanto',55000,30.00,100,'default.jpg',2,'2022-05-28 01:25:24','2022-05-28 01:25:24','0000-00-00 00:00:00'),
+(20,'Pemulihan Jiwa 2','pemulihan-jiwa-2',2007,'Dedy Susanto',55000,0.00,100,'default.jpg',2,'2022-05-28 01:25:24','2022-05-28 01:25:24','0000-00-00 00:00:00'),
+(21,'Pemulihan Jiwa 3','pemulihan-jiwa-3',2008,'Dedy Susanto',55000,0.00,100,'default.jpg',2,'2022-05-28 01:25:24','2022-05-28 01:25:24','0000-00-00 00:00:00'),
+(22,'Pemulihan Jiwa 4','pemulihan-jiwa-4',2015,'Dedy Susanto',75000,20.00,50,'default.jpg',2,'2022-05-28 01:25:24','2022-05-28 01:25:24','0000-00-00 00:00:00');
 
 /*Table structure for table `book_category` */
 
@@ -511,7 +525,9 @@ insert  into `sale`(`sale_id`,`user_id`,`customer_id`,`created_at`,`updated_at`)
 ('J1643860564',1,3,'2022-02-02 21:56:04','2022-02-02 21:56:04'),
 ('J1643910031',1,0,'2022-02-03 11:40:31','2022-02-03 11:40:31'),
 ('J1643910106',1,0,'2022-02-03 11:41:46','2022-02-03 11:41:46'),
-('J1644216274',1,0,'2022-02-07 00:44:34','2022-02-07 00:44:34');
+('J1644216274',1,0,'2022-02-07 00:44:34','2022-02-07 00:44:34'),
+('J1652863509',1,0,'2022-05-18 03:45:09','2022-05-18 03:45:09'),
+('J1652863521',1,0,'2022-05-18 03:45:21','2022-05-18 03:45:21');
 
 /*Table structure for table `sale_detail` */
 
@@ -535,7 +551,12 @@ insert  into `sale_detail`(`sale_id`,`book_id`,`amount`,`price`,`discount`,`tota
 ('J1643910031',2,1,85000,841.5,84158.5),
 ('J1643910106',1,1,55000,841.5,54158.5),
 ('J1643910106',2,1,85000,841.5,84158.5),
-('J1644216274',5,2,55000,0,110000);
+('J1644216274',5,2,55000,0,110000),
+('J1652863509',1,1,55000,544.5,54455.5),
+('J1652863509',2,1,85000,841.5,84158.5),
+('J1652863521',1,1,55000,544.5,54455.5),
+('J1652863521',2,1,85000,841.5,84158.5),
+('J1652863521',5,1,55000,0,55000);
 
 /*Table structure for table `supplier` */
 
