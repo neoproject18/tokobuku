@@ -4,16 +4,15 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdcebf9e9491e3c7a933ea5ca2cac1021
+class ComposerStaticInit09b054ad8c7dc745ba3b0b14dc43e9c7
 {
     public static $files = array (
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '3917c79c5052b270641b5a200963dbc2' => __DIR__ . '/..' . '/kint-php/kint/init.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -36,7 +35,6 @@ class ComposerStaticInitdcebf9e9491e3c7a933ea5ca2cac1021
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
         'P' => 
         array (
@@ -107,10 +105,6 @@ class ComposerStaticInitdcebf9e9491e3c7a933ea5ca2cac1021
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
-        'Symfony\\Polyfill\\Ctype\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'Psr\\SimpleCache\\' => 
         array (
@@ -859,10 +853,10 @@ class ComposerStaticInitdcebf9e9491e3c7a933ea5ca2cac1021
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitdcebf9e9491e3c7a933ea5ca2cac1021::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitdcebf9e9491e3c7a933ea5ca2cac1021::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitdcebf9e9491e3c7a933ea5ca2cac1021::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitdcebf9e9491e3c7a933ea5ca2cac1021::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit09b054ad8c7dc745ba3b0b14dc43e9c7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit09b054ad8c7dc745ba3b0b14dc43e9c7::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit09b054ad8c7dc745ba3b0b14dc43e9c7::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit09b054ad8c7dc745ba3b0b14dc43e9c7::$classMap;
 
         }, null, ClassLoader::class);
     }
