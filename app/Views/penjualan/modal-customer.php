@@ -1,5 +1,6 @@
 <!-- Modal Insert Cart -->
-<div class="modal fade" id="modalCust" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+<div class="modal fade" id="modalCust" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
+    data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -22,16 +23,18 @@
                     <tbody>
                         <?php $no = 1;
                         foreach ($dataCust as $value) : ?>
-                            <tr>
-                                <td><?= $no++  ?></td>
-                                <td><?= $value['name']  ?></td>
-                                <td><?= $value['no_customer']  ?></td>
-                                <td><?= $value['email']  ?></td>
-                                <td><?= $value['phone']  ?></td>
-                                <td>
-                                    <button onclick="selectCustomer('<?= $value['customer_id']  ?>','<?= $value['name']  ?>')" class="btn btn-success"><i class="fa fa-plus"></i> Pilih</button>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?= $no++  ?></td>
+                            <td><?= $value['name']  ?></td>
+                            <td><?= $value['no_customer']  ?></td>
+                            <td><?= $value['email']  ?></td>
+                            <td><?= $value['phone']  ?></td>
+                            <td>
+                                <button
+                                    onclick="selectCustomer('<?= $value['customer_id']  ?>','<?= $value['name']  ?>')"
+                                    class="btn btn-success"><i class="fa fa-plus"></i> Pilih</button>
+                            </td>
+                        </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
@@ -46,9 +49,9 @@
 
 
 <script>
-    function selectCustomer(id, name) {
-        $('#id-cust').val(id);
-        $('#nama-cust').val(name);
-        $('#modalCust').modal('hide');
-    }
+function selectCustomer(id, name) {
+    $('#id-cust').val(id);
+    $('#nama-cust').val(name);
+    $('#modalCust').modal('hide');
+}
 </script>
