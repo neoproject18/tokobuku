@@ -313,21 +313,31 @@ class Book extends BaseController
             $namaFile = $this->defaultImage;
             $slug = url_title($value[1], '-', true);
 
-            // Cek judul
-            $dataBook = $this->bookModel->getBook($slug);
+            /** Field judul, penulis, tahun, harga, stok, dan kategori
+             * Tidak Boleh NULL
+             */
 
-            if ($dataBook['title'] != $value[1]) {
-                $this->bookModel->save([
-                    'title' => $value[1],
-                    'author' => $value[2],
-                    'release_year' => $value[3],
-                    'price' => $value[4],
-                    'discount' => $value[5] ?? 0,
-                    'stock' => $value[6],
-                    'book_category_id' => $value[7],
-                    'slug' => $slug,
-                    'cover' => $namaFile
-                ]);
+            if (
+                $value[1] != "" && $value[2] != "" &&
+                $value[3] != "" && $value[4] != "" &&
+                $value[6] != "" && $value[7]
+            ) {
+                // Cek judul
+                $dataBook = $this->bookModel->getBook($slug);
+
+                if (empty($dataBook)) {
+                    $this->bookModel->save([
+                        'title' => $value[1],
+                        'author' => $value[2],
+                        'release_year' => $value[3],
+                        'price' => $value[4],
+                        'discount' => $value[5] ?? 0,
+                        'stock' => $value[6],
+                        'book_category_id' => $value[7],
+                        'slug' => $slug,
+                        'cover' => $namaFile
+                    ]);
+                }
             }
         }
         session()->setFlashdata("msg", "Data berhasil diimport!");
