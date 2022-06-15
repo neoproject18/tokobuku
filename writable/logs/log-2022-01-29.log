@@ -1,0 +1,51 @@
+CRITICAL - 2022-01-29 08:49:32 --> Cannot use object of type Myth\Auth\Entities\User as array
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('user/index', Array, true)
+#3 D:\xampp\htdocs\tokobuku\app\Controllers\Users.php(22): view('user/index', Array)
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Users->index()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-01-29 08:54:11 --> Cannot use object of type Myth\Auth\Entities\User as array
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('user/index', Array, true)
+#3 D:\xampp\htdocs\tokobuku\app\Controllers\Users.php(22): view('user/index', Array)
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Users->index()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-01-29 09:01:26 --> Too few arguments to function App\Controllers\Users::delete(), 0 passed in D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php on line 825 and exactly 1 expected
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Users->delete()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-01-29 09:01:54 --> Undefined property: App\Controllers\Users::$bookModel
+#0 D:\xampp\htdocs\tokobuku\app\Controllers\Users.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'D:\\xampp\\htdocs...', 35, Array)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Users->delete('3')
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-29 09:09:32 --> You do not have sufficient permissions to access that page.
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Filters\Filters.php(173): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(386): CodeIgniter\Filters\Filters->run('users', 'before')
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-01-29 09:11:38 --> You do not have sufficient permissions to access that page.
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Filters\Filters.php(173): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(386): CodeIgniter\Filters\Filters->run('users', 'before')
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#5 {main}

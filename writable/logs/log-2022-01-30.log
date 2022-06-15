@@ -1,0 +1,43 @@
+CRITICAL - 2022-01-30 09:40:11 --> Undefined variable: result
+#0 D:\xampp\htdocs\tokobuku\app\Views\penjualan\index.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 37, Array)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('penjualan/index', Array, true)
+#4 D:\xampp\htdocs\tokobuku\app\Controllers\Penjualan.php(12): view('penjualan/index', Array)
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Penjualan->index()
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-01-30 10:06:47 --> Undefined variable: validation
+#0 D:\xampp\htdocs\tokobuku\app\Views\penjualan\index.php(80): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 80, Array)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('penjualan/index', Array, true)
+#4 D:\xampp\htdocs\tokobuku\app\Controllers\Penjualan.php(12): view('penjualan/index', Array)
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Penjualan->index()
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-01-30 22:07:08 --> Undefined property: App\Controllers\Penjualan::$bookModel
+#0 D:\xampp\htdocs\tokobuku\app\Controllers\Penjualan.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'D:\\xampp\\htdocs...', 9, Array)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Penjualan->index()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-01-30 22:43:44 --> syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING)
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(790): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#9 {main}

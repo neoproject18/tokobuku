@@ -1,0 +1,102 @@
+CRITICAL - 2022-02-03 22:27:32 --> Cannot use object of type App\Entities\Book as array
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('book/index', Array, true)
+#3 D:\xampp\htdocs\tokobuku\app\Controllers\Book.php(24): view('book/index', Array)
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Book->index()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Book))
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-02-03 22:30:07 --> Class 'App\Entities\Book' not found
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-02-03 22:30:27 --> Cannot use object of type App\Entities\BookEntity as array
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('book/index', Array, true)
+#3 D:\xampp\htdocs\tokobuku\app\Controllers\Book.php(24): view('book/index', Array)
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Book->index()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Book))
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-02-03 22:30:32 --> Cannot use object of type App\Entities\BookEntity as array
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('book/index', Array, true)
+#3 D:\xampp\htdocs\tokobuku\app\Controllers\Book.php(24): view('book/index', Array)
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Book->index()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Book))
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-02-03 22:31:30 --> Cannot use object of type App\Entities\BookEntity as array
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('book/index', Array, true)
+#3 D:\xampp\htdocs\tokobuku\app\Controllers\Book.php(24): view('book/index', Array)
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Book->index()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Book))
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-02-03 22:31:57 --> Cannot use object of type App\Entities\BookEntity as array
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(424): CodeIgniter\View\View->render('penjualan/modal...', NULL, true)
+#3 D:\xampp\htdocs\tokobuku\app\Views\penjualan\list.php(86): CodeIgniter\View\View->include('penjualan/modal...')
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('penjualan/list', Array, true)
+#7 D:\xampp\htdocs\tokobuku\app\Controllers\Penjualan.php(32): view('penjualan/list', Array)
+#8 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Penjualan->index()
+#9 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#10 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2022-02-03 23:09:37 --> Undefined variable: validation
+#0 D:\xampp\htdocs\tokobuku\app\Views\supplier\create.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 48, Array)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('supplier/create', Array, true)
+#4 D:\xampp\htdocs\tokobuku\app\Controllers\Supplier.php(30): view('supplier/create', Array)
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Supplier->create()
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Supplier))
+#7 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-02-03 23:14:01 --> Column 'phone' cannot be null
+CRITICAL - 2022-02-03 23:14:01 --> Column 'phone' cannot be null
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `su...', 0)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `su...')
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `su...')
+#3 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `su...', Array, false)
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Object(App\Entities\SupplierEntity), false)
+#8 D:\xampp\htdocs\tokobuku\app\Controllers\Supplier.php(47): CodeIgniter\BaseModel->save(Object(App\Entities\SupplierEntity))
+#9 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Supplier->save()
+#10 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Supplier))
+#11 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2022-02-03 23:14:57 --> Cannot use object of type App\Entities\SupplierEntity as array
+#0 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('supplier/list', Array, true)
+#3 D:\xampp\htdocs\tokobuku\app\Controllers\Supplier.php(23): view('supplier/list', Array)
+#4 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(825): App\Controllers\Supplier->index()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Supplier))
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#9 {main}

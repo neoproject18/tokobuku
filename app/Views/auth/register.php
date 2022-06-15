@@ -14,10 +14,19 @@
 
                         <form action="<?= base_url() . route_to('register') ?>" method="post">
                             <?= csrf_field() ?>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <input class="form-control <?php if (session('errors.firstname')) : ?>is-invalid<?php endif ?>" name="firstname" type="firstname" placeholder="Firstname" value="<?= old('firstname') ?>" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control <?php if (session('errors.lastname')) : ?>is-invalid<?php endif ?>" name="lastname" type="lastname" placeholder="Lastname" value="<?= old('lastname') ?>" />
+                                </div>
+                            </div>
                             <div class="form-floating mb-3">
                                 <input class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" type="email" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>" />
                                 <label for="inputEmail"><?= lang('Auth.email') ?></label>
                             </div>
+
 
                             <div class="form-floating mb-3">
                                 <input class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>" />
