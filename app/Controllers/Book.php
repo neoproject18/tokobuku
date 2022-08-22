@@ -6,6 +6,8 @@ use \App\Models\BookModel;
 use \App\Models\CategoryModel;
 use PhpOffice\PhpSpreadsheet\Reader\Xls;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\Writer\Word2007;
 
 class Book extends BaseController
 {
@@ -343,5 +345,44 @@ class Book extends BaseController
         session()->setFlashdata("msg", "Data berhasil diimport!");
 
         return redirect()->to('/book');
+    }
+
+    public function exportWord()
+    {
+        $phpword = new PhpWord();
+        $phpword->addTitleStyle(1, ['size' => 16, 'bold' => true], ['alignment' => 'center']);
+        $section = $phpword->addSection(['orientation' => 'landscape']);
+        $section->addTitle("DATA BUKU");
+        $section->addTextBreak();
+        $table = $section->addTable(['borderSize' => 3]);
+        $table->addRow();
+        $table->addCell(1000)->addText("NO");
+        $table->addCell(5000)->addText("KOVER");
+        $table->addCell(10000)->addText("JUDUL");
+        $table->addCell(5000)->addText("KATEGORI");
+        $table->addCell(5000)->addText("HARGA");
+        $table->addCell(5000)->addText("STOK");
+
+        $dataBook = $this->bookModel->getBook();
+        $no = 1;
+        foreach ($dataBook as $item) {
+            $table->addRow();
+            $table->addCell()->addText($no);
+            $table->addCell()->addImage('img/' . $item['cover'], ['width' => 100]);
+            $table->addCell()->addText($item['title']);
+            $table->addCell()->addText($item['name_category']);
+            $table->addCell()->addText($item['price']);
+            $table->addCell()->addText($item['stock']);
+            $no++;
+        }
+
+        // $section->addText("Hello World");
+        $writer = new Word2007($phpword);
+        $filename = "data-buku.docx";
+        header("Content-Type: application/msword");
+        header("Content-Disposition: attachment; filename=" . $filename);
+        header("Cache-Control: max-age=0");
+
+        $writer->save("php://output");
     }
 }

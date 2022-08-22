@@ -43,6 +43,7 @@ $routes->group('book', function ($r) {
     $r->get('edit/(:any)', 'Book::edit/$1');
     $r->post('edit/(:any)', 'Book::update/$1');
     $r->delete('(:num)', 'Book::delete/$1');
+    $r->get('exportword', 'Book::exportWord');
     $r->get('(:any)', 'Book::detail/$1');
 });
 

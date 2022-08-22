@@ -1,0 +1,8 @@
+CRITICAL - 2022-08-22 09:56:48 --> Undefined property: PhpOffice\PhpWord\Style\Paper::$getWidth
+#0 D:\xampp\htdocs\tokobuku\app\Controllers\Book.php(359): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'D:\\xampp\\htdocs...', 359, Array)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Book->exportWord()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Book))
+#3 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}

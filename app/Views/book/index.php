@@ -22,6 +22,7 @@
             <div class="card-body">
                 <a class="btn btn-primary mb-3" type="button" href="<?= base_url('book/create') ?>">Tambah Buku</a>
                 <a class="btn btn-dark mb-3" type="button" data-bs-target="#modalImport" data-bs-toggle="modal">Import Buku</a>
+                <a class="btn btn-warning mb-3" type="button" href="<?= base_url('book/exportword') ?>">Export Buku to Word</a>
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
