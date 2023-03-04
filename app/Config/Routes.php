@@ -77,8 +77,9 @@ $routes->group('jual', function ($r) {
     $r->post('bayar', 'Penjualan::pembayaran');
     $r->delete('(:any)', 'Penjualan::deleteCart/$1');
     $r->get('laporan', 'Penjualan::report');
-    $r->get('exportpdf', 'Penjualan::exportPDF');
-    $r->get('exportexcel', 'Penjualan::exportExcel');
+    $r->post('laporan/filter', 'Penjualan::filter');
+    $r->get('exportpdf/(:any)/(:any)', 'Penjualan::exportPDF/$1/$2');
+    $r->get('exportexcel/(:any)/(:any)', 'Penjualan::exportExcel/$1/$2');
 });
 
 

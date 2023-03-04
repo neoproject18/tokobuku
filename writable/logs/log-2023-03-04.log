@@ -15,3 +15,23 @@ CRITICAL - 2023-03-04 00:13:16 --> Column 'firstname' cannot be null
 #12 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #13 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
 #14 {main}
+CRITICAL - 2023-03-04 02:26:13 --> Undefined variable: tanggal
+#0 D:\xampp\htdocs\tokobuku\app\Views\penjualan\report.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 22, Array)
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(210): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('penjualan/repor...', Array, true)
+#4 D:\xampp\htdocs\tokobuku\app\Controllers\Penjualan.php(197): view('penjualan/repor...', Array)
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Penjualan->report()
+#6 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2023-03-04 03:09:06 --> Too few arguments to function App\Models\SaleModel::getReport(), 0 passed in D:\xampp\htdocs\tokobuku\app\Controllers\Penjualan.php on line 220 and exactly 2 expected
+#0 D:\xampp\htdocs\tokobuku\app\Controllers\Penjualan.php(220): App\Models\SaleModel->getReport()
+#1 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Penjualan->exportPDF()
+#2 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#3 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\tokobuku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\tokobuku\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}

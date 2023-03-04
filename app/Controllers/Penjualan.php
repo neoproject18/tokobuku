@@ -38,24 +38,28 @@ class Penjualan extends BaseController
 
     public function addCart()
     {
-        $this->cart->insert(array(
-            'id'      => $this->request->getVar('id'),
-            'qty'     => $this->request->getVar('qty'),
-            'price'   => $this->request->getVar('price'),
-            'name'    => $this->request->getVar('name'),
-            'options' => array(
-                'discount' => $this->request->getVar('discount')
+        $this->cart->insert(
+            array(
+                'id' => $this->request->getVar('id'),
+                'qty' => $this->request->getVar('qty'),
+                'price' => $this->request->getVar('price'),
+                'name' => $this->request->getVar('name'),
+                'options' => array(
+                    'discount' => $this->request->getVar('discount')
+                )
             )
-        ));
+        );
         echo $this->showCart();
     }
 
     public function updateCart()
     {
-        $this->cart->update(array(
-            'rowid'   => $this->request->getVar('rowid'),
-            'qty'     => $this->request->getVar('qty')
-        ));
+        $this->cart->update(
+            array(
+                'rowid' => $this->request->getVar('rowid'),
+                'qty' => $this->request->getVar('qty')
+            )
+        );
         echo $this->showCart();
     }
 
@@ -187,19 +191,36 @@ class Penjualan extends BaseController
         }
     }
 
-    public function report()
+    public function report($tgl_awal = null, $tgl_akhir = null)
     {
-        $report = $this->sale->getReport();
+        $tgl1 = $tgl_awal == null ? date('Y-m-01') : $tgl_awal;
+        $tgl2 = $tgl_akhir == null ? date('Y-m-t') : $tgl_akhir;
+
+        $report = $this->sale->getReport($tgl1, $tgl2);
         $data = [
             'title' => 'Laporan Penjualan',
             'result' => $report,
+            'tanggal' => [
+                'tgl_awal' => $tgl1,
+                'tgl_akhir' => $tgl2,
+            ]
         ];
         return view('penjualan/report', $data);
     }
 
-    public function exportPDF()
+    public function filter()
     {
-        $report = $this->sale->getReport();
+        $tgl_awal = $this->request->getVar('tgl_awal');
+        $tgl_akhir = $this->request->getVar('tgl_akhir');
+        return $this->report($tgl_awal, $tgl_akhir);
+    }
+
+    public function exportPDF($tgl_awal = null, $tgl_akhir = null)
+    {
+        $tgl1 = $tgl_awal == null ? date('Y-m-01') : $tgl_awal;
+        $tgl2 = $tgl_akhir == null ? date('Y-m-t') : $tgl_akhir;
+
+        $report = $this->sale->getReport($tgl1, $tgl2);
         $data = [
             'title' => 'Laporan Penjualan',
             'result' => $report,
@@ -215,9 +236,12 @@ class Penjualan extends BaseController
         $pdf->Output('laporan-penjualan.pdf', 'I');
     }
 
-    public function exportExcel()
+    public function exportExcel($tgl_awal = null, $tgl_akhir = null)
     {
-        $report = $this->sale->getReport();
+        $tgl1 = $tgl_awal == null ? date('Y-m-01') : $tgl_awal;
+        $tgl2 = $tgl_akhir == null ? date('Y-m-t') : $tgl_akhir;
+
+        $report = $this->sale->getReport($tgl1, $tgl2);
 
         $spreadsheet = new Spreadsheet();
         // Menuliskan Header atau Judul Tabel
