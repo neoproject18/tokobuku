@@ -1,6 +1,6 @@
 /*
-SQLyog Professional v12.5.1 (64 bit)
-MySQL - 10.1.34-MariaDB : Database - tokobuku
+SQLyog Professional v12.5.1 (32 bit)
+MySQL - 10.4.27-MariaDB : Database - tokobuku
 *********************************************************************
 */
 
@@ -12,7 +12,7 @@ MySQL - 10.1.34-MariaDB : Database - tokobuku
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`tokobuku` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`tokobuku` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 
 USE `tokobuku`;
 
@@ -27,7 +27,7 @@ CREATE TABLE `auth_activation_attempts` (
   `token` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `auth_activation_attempts` */
 
@@ -43,7 +43,7 @@ CREATE TABLE `auth_groups` (
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `auth_groups` */
 
@@ -56,13 +56,13 @@ insert  into `auth_groups`(`id`,`name`,`description`) values
 DROP TABLE IF EXISTS `auth_groups_permissions`;
 
 CREATE TABLE `auth_groups_permissions` (
-  `group_id` int(11) unsigned NOT NULL DEFAULT '0',
-  `permission_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `group_id` int(11) unsigned NOT NULL DEFAULT 0,
+  `permission_id` int(11) unsigned NOT NULL DEFAULT 0,
   KEY `auth_groups_permissions_permission_id_foreign` (`permission_id`),
   KEY `group_id_permission_id` (`group_id`,`permission_id`),
   CONSTRAINT `auth_groups_permissions_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `auth_groups` (`id`) ON DELETE CASCADE,
   CONSTRAINT `auth_groups_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `auth_permissions` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `auth_groups_permissions` */
 
@@ -83,13 +83,13 @@ insert  into `auth_groups_permissions`(`group_id`,`permission_id`) values
 DROP TABLE IF EXISTS `auth_groups_users`;
 
 CREATE TABLE `auth_groups_users` (
-  `group_id` int(11) unsigned NOT NULL DEFAULT '0',
-  `user_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `group_id` int(11) unsigned NOT NULL DEFAULT 0,
+  `user_id` int(11) unsigned NOT NULL DEFAULT 0,
   KEY `auth_groups_users_user_id_foreign` (`user_id`),
   KEY `group_id_user_id` (`group_id`,`user_id`),
   CONSTRAINT `auth_groups_users_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `auth_groups` (`id`) ON DELETE CASCADE,
   CONSTRAINT `auth_groups_users_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `auth_groups_users` */
 
@@ -113,7 +113,7 @@ CREATE TABLE `auth_logins` (
   PRIMARY KEY (`id`),
   KEY `email` (`email`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `auth_logins` */
 
@@ -170,7 +170,22 @@ insert  into `auth_logins`(`id`,`ip_address`,`email`,`user_id`,`date`,`success`)
 (50,'::1','dharma.bekti16696@gmail.com',1,'2022-05-19 02:56:17',1),
 (51,'::1','dharma.bekti16696@gmail.com',1,'2022-05-19 20:39:22',1),
 (52,'::1','dharma.bekti16696@gmail.com',1,'2022-05-26 21:32:10',1),
-(53,'::1','dharma.bekti16696@gmail.com',1,'2022-05-28 01:10:29',1);
+(53,'::1','dharma.bekti16696@gmail.com',1,'2022-05-28 01:10:29',1),
+(54,'::1','admin',NULL,'2023-03-03 22:27:26',0),
+(55,'::1','admin',NULL,'2023-03-03 22:27:34',0),
+(56,'::1','admin',NULL,'2023-03-03 22:27:49',0),
+(57,'::1','dharma',NULL,'2023-03-03 22:28:20',0),
+(58,'::1','dharma',NULL,'2023-03-03 22:28:25',0),
+(59,'::1','agus',NULL,'2023-03-03 22:29:08',0),
+(60,'::1','agus',NULL,'2023-03-03 22:29:14',0),
+(61,'::1','admin',NULL,'2023-03-03 22:29:20',0),
+(62,'::1','admin',NULL,'2023-03-03 22:31:10',0),
+(63,'::1','admin',NULL,'2023-03-03 22:31:19',0),
+(64,'::1','admin',NULL,'2023-03-03 22:31:25',0),
+(65,'::1','admin',NULL,'2023-03-04 00:13:42',0),
+(66,'::1','admin',NULL,'2023-03-04 00:13:48',0),
+(67,'::1','anomadmin',NULL,'2023-03-04 00:14:34',0),
+(68,'::1','dharma.bekti16696@gmail.com',1,'2023-03-04 00:14:41',1);
 
 /*Table structure for table `auth_permissions` */
 
@@ -181,7 +196,7 @@ CREATE TABLE `auth_permissions` (
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `auth_permissions` */
 
@@ -205,7 +220,7 @@ CREATE TABLE `auth_reset_attempts` (
   `token` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `auth_reset_attempts` */
 
@@ -223,7 +238,7 @@ CREATE TABLE `auth_tokens` (
   KEY `auth_tokens_user_id_foreign` (`user_id`),
   KEY `selector` (`selector`),
   CONSTRAINT `auth_tokens_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `auth_tokens` */
 
@@ -232,13 +247,13 @@ CREATE TABLE `auth_tokens` (
 DROP TABLE IF EXISTS `auth_users_permissions`;
 
 CREATE TABLE `auth_users_permissions` (
-  `user_id` int(11) unsigned NOT NULL DEFAULT '0',
-  `permission_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `user_id` int(11) unsigned NOT NULL DEFAULT 0,
+  `permission_id` int(11) unsigned NOT NULL DEFAULT 0,
   KEY `auth_users_permissions_permission_id_foreign` (`permission_id`),
   KEY `user_id_permission_id` (`user_id`,`permission_id`),
   CONSTRAINT `auth_users_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `auth_permissions` (`id`) ON DELETE CASCADE,
   CONSTRAINT `auth_users_permissions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `auth_users_permissions` */
 
@@ -261,7 +276,7 @@ CREATE TABLE `book` (
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime NOT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 /*Data for the table `book` */
 
@@ -297,7 +312,7 @@ CREATE TABLE `book_category` (
   `book_category_id` int(5) NOT NULL AUTO_INCREMENT,
   `name_category` varchar(50) NOT NULL,
   PRIMARY KEY (`book_category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 /*Data for the table `book_category` */
 
@@ -322,7 +337,7 @@ CREATE TABLE `customer` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `customer` */
 
@@ -445,7 +460,7 @@ CREATE TABLE `log_customer` (
   `phone` varchar(20) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `log_customer` */
 
@@ -469,7 +484,7 @@ CREATE TABLE `migrations` (
   `time` int(11) NOT NULL,
   `batch` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `migrations` */
 
@@ -487,7 +502,7 @@ CREATE TABLE `purchase` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`purchase_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 /*Data for the table `purchase` */
 
@@ -501,7 +516,7 @@ CREATE TABLE `purchase_detail` (
   `amount` int(11) NOT NULL,
   `price` float NOT NULL,
   `total_price` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 /*Data for the table `purchase_detail` */
 
@@ -516,7 +531,7 @@ CREATE TABLE `sale` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`sale_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 /*Data for the table `sale` */
 
@@ -540,7 +555,7 @@ CREATE TABLE `sale_detail` (
   `price` float NOT NULL,
   `discount` float NOT NULL,
   `total_price` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 /*Data for the table `sale_detail` */
 
@@ -571,7 +586,7 @@ CREATE TABLE `supplier` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`supplier_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 /*Data for the table `supplier` */
 
@@ -595,20 +610,20 @@ CREATE TABLE `users` (
   `activate_hash` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `status_message` varchar(255) DEFAULT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '0',
-  `force_pass_reset` tinyint(1) NOT NULL DEFAULT '0',
+  `active` tinyint(1) NOT NULL DEFAULT 0,
+  `force_pass_reset` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`firstname`,`lastname`,`email`,`username`,`password_hash`,`reset_hash`,`reset_at`,`reset_expires`,`activate_hash`,`status`,`status_message`,`active`,`force_pass_reset`,`created_at`,`updated_at`,`deleted_at`) values 
-(1,'Dharma','Bekti','dharma.bekti16696@gmail.com','admin','$2y$10$.u3WrsEnX7x/CufZQNyYU.x/BuBQ6S3Zhg0xoPg5hU08l5Bq9G7.a',NULL,NULL,NULL,NULL,NULL,NULL,1,0,'2022-01-27 21:39:53','2022-01-27 21:39:53',NULL),
+(1,'Dharma','Bekti','dharma.bekti16696@gmail.com','admin','$2y$10$q1aw/qauvnybCKaKkSTv6uY9poPBdW031feDfTiorFUUoP1n9NuvG','a5a8b64651243d8633ecfbce8edecc8f',NULL,'2023-03-03 23:43:00',NULL,NULL,NULL,1,0,'2022-01-27 21:39:53','2023-03-03 22:43:00',NULL),
 (2,'Bekti','Suratmanto','45uvb261216@gmail.com','dharma','$2y$10$WmQN9TjQ4kNKSJ6pOnbjwuMQma/4fY3jufvD6RUpzZiR8.yv41E6K',NULL,NULL,NULL,NULL,NULL,NULL,1,0,'2022-01-27 21:45:29','2022-01-27 21:45:29',NULL),
 (3,'Naruto','Namikaze','naruto@mail.com','naruto','$2y$10$OizhPPiO3XYFnZIsM6o6Mu13Efq5Et3XAOr3fG2IMeiGfVTUrpgoy',NULL,NULL,NULL,NULL,NULL,NULL,1,0,'2022-01-28 11:35:35','2022-01-29 09:02:05',NULL),
 (4,'Agus123','Waluyo','agus@mail.com','agus','$2y$10$oC8M1bGGeMYfNSww/8sNaOnXyHbE.zjEbmMF..AmqDNxAk0XdpXhS',NULL,NULL,NULL,NULL,NULL,NULL,1,0,'2022-04-24 22:22:14','2022-04-25 01:16:46','2022-04-25 01:16:46');
@@ -633,7 +648,7 @@ DELIMITER ;
 /*!50003 DROP FUNCTION IF EXISTS `CalcIncome` */;
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` FUNCTION `CalcIncome`( starting_value INT ) RETURNS int(11)
+/*!50003 CREATE DEFINER=`root`@`localhost` FUNCTION `CalcIncome`(starting_value INT ) RETURNS int(11)
 BEGIN
    DECLARE income INT;
    SET income = 0;
@@ -649,9 +664,8 @@ DELIMITER ;
 /*!50003 DROP FUNCTION IF EXISTS `CustomerLevel` */;
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` FUNCTION `CustomerLevel`(
-	credit DECIMAL(10,2)
-) RETURNS varchar(20) CHARSET latin1
+/*!50003 CREATE DEFINER=`root`@`localhost` FUNCTION `CustomerLevel`(credit DECIMAL(10,2)
+) RETURNS varchar(20) CHARSET latin1 COLLATE latin1_swedish_ci
     DETERMINISTIC
 BEGIN
     DECLARE customerLevel VARCHAR(20);
